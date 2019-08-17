@@ -54,6 +54,9 @@ class Student
   end
   
   def self.find_by_name(name)
+    if self.id
+    self.update
+  else
     sql = <<-SQL 
       SELECT *
       FROM students
